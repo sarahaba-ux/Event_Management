@@ -1,0 +1,210 @@
+/* General body styling */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Dancing Script', cursive, Arial, sans-serif; /* Changed to Dancing Script cursive font */
+  background-image: url('/assets/images/homepage_bg.png'); /* Set background image */
+  background-size: cover; /* Ensure the image covers the entire page */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Make the background fixed when scrolling */
+  color: #e0e0e0; /* Light text color for readability */
+}
+
+/* Sidebar Styling */
+.sidebar {
+  height: 100vh;
+  background: rgba(230, 157, 157, 0.3); /* Transparent white with slight opacity */
+  color: #e0e0e0; /* Light text color in sidebar */
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3); /* Shadow for modern look */
+}
+
+/* Main Content Area Styling */
+.content {
+  background-color: #181818; /* Dark background for content area */
+  height: calc(100vh - 56px - 50px); /* Adjust height based on header/footer */
+  color: #e0e0e0; /* Light text color for content */
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #181818; /* Dark footer */
+  color: #888; /* Lighter text color for footer */
+  font-size: 0.9em;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Card Styling */
+.card-container {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center; /* Center cards */
+  align-items: center; /* Center cards vertically */
+  height: 100%; /* Make sure the container fills the available height */
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.6); /* More opaque white compared to the sidebar */
+  color: #2e2e2e; /* White text inside the card */
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  border-radius: 10px; /* Optional rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow to give depth to the card */
+  width: 400px; /* Set a smaller width for the card */
+  height: 200px; /* Set a fixed height for the card */
+  margin: 10px; /* Space between the cards */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content inside the card */
+}
+
+.card:hover {
+  transform: scale(1.1) rotateY(10deg) rotateX(10deg); /* Hover effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+.card-body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center text vertically */
+  align-items: center; /* Center text horizontally */
+}
+
+/* Wedding Card */
+.wedding-card {
+  /*background-image: url('../assets/images/card_wedding.png'); *//* Wedding card background */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: black; /* Adjust text color for contrast with the image */
+  border-radius: 15px; /* Set the radius for the card */
+  overflow: hidden; /* Ensure the content inside the card doesn't spill out */
+}
+
+/* Apply a white tint overlay only to the wedding card */
+.wedding-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* Apply a white tint overlay with opacity */
+  z-index: 0; /* Ensure the overlay is behind the text */
+  border-radius: inherit; /* Match the card's border radius */
+}
+
+/* Content on top of the overlay */
+.wedding-card .card-body {
+  position: relative;
+  z-index: 1; /* Ensures the text appears above the white tint */
+}
+
+.wedding-card .card-title, .wedding-card p {
+  z-index: 2; /* Ensures the text appears above the white tint */
+}
+
+/* Birthday, Graduation, and Housewarming Party Cards */
+.card.birthday-card, .card.graduation-card, .card.housewarming-card {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: black;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Background images for the other cards 
+.card.birthday-card {
+  background-image: url('../assets/images/card_birthday.png');
+}
+
+.card.graduation-card {
+  background-image: url('../assets/images/card_graduation.png');
+}
+
+.card.housewarming-card {
+  background-image: url('../assets/images/card_housewarmingg.png');
+}
+*/
+
+/* Apply a white tint overlay to all other cards (if needed) */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.45); /* Optional white tint overlay */
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* Content on top of the overlay */
+.card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.card .card-title, .card p {
+  z-index: 2;
+}
+
+/* Modal Design */
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.9); /* Slight white tint */
+}
+
+.modal-body {
+  color: black; 
+}
+
+.modal-title { /*for Loign Text*/
+  color: black; 
+}
+
+.btn-primary {
+  background-color: #e91e63; /* Pinkish color */
+  border-color: #d81b60; /* Darker pink border */
+}
+
+.btn-primary:hover {
+  background-color: #c2185b; /* Darker pinkish on hover */
+  border-color: #ad1457;
+}
+
+.btn-close {
+  color: #000; /* Close button color */
+}
+
+/* Link Styling */
+a {
+  text-decoration: none;
+  color: #bb86fc; /* Light purple color for links */
+}
+
+/* Additional Styling */
+.shadow-item {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.shadow-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(90% + 90px);
+  height: 5px;
+  background-color: transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateX(-15px);
+}
+
+.shadow-item:hover::after {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}

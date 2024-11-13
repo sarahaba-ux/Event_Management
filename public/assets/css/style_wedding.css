@@ -1,0 +1,169 @@
+/* Body Background and Font */
+body {
+    background: url('/assets/images/homepage_bg.png') no-repeat center center fixed;
+    background-size: cover; /* Cover the entire screen */
+    position: relative;
+    min-height: 100vh;
+    font-family: 'Dancing Script', cursive, Arial, sans-serif; 
+}
+
+/* Heading Styles */
+h1, h2, h3 {
+    font-family: 'Dancing Script', cursive, Arial, sans-serif;  /* Serif font for headings */
+    color: rgba(83, 5, 28, 0.658); /* Elegant dark color */
+}
+
+/* Primary Button Styling */
+.btn-primary {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 1) 0%, rgba(255, 182, 193, 1) 100%); /* Button gradient */
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-family: 'Dancing Script', cursive, Arial, sans-serif;  /* Elegant font */
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 1) 0%, rgba(255, 105, 180, 1) 100%); /* Reverse gradient on hover */
+    opacity: 0.9;
+}
+
+/* Sidebar Styles */
+.wedding-sidebar {
+    min-height: 100vh;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Lighter background with slight transparency */
+    color: #333; /* Dark text for better contrast */
+    font-family: 'Dancing Script', cursive, Arial, sans-serif;  /* Serif font for sidebar */
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white */
+    color: #333; /* Darker text for contrast */
+    padding-top: 60px; /* Adjust to give space for the header */
+    margin-top: 20px; /* Added margin-top for spacing */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3); /* Shadow for modern look */
+    border-radius: 15px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Smooth slide-in effect */
+    transform: translateX(-100%); /* Initially hide the sidebar */
+    z-index: 999;
+}
+
+/* Show sidebar when active */
+.sidebar-active {
+    transform: translateX(0); /* Slide-in sidebar */
+}
+
+/* Sidebar Links Styling */
+.sidebar a {
+    color: #333; /* Dark text for contrast */
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    transition: 0.1s; /* Smooth transition for hover effects */
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+/* Hover Effect for Sidebar Links */
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.034); /* Slightly transparent white on hover */
+}
+
+/* Sidebar Navigation */
+.nav-link {
+    font-weight: bold;
+    color: #333; /* Ensure text is dark enough */
+}
+
+/* Icon Styling */
+.sidebar .nav-link i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #333;
+    opacity: 0.8;
+}
+
+/* Shadow Effect Below Each Item */
+.shadow-item {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.shadow-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% + 50%);
+    height: 3px; /* Height of the shadow */
+    background-color: transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Stronger shadow on hover */
+.shadow-item:hover::after {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Container Box for Forms */
+.container-box {
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Content Container Flexbox Styling */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    transition: margin-left 0.3s ease; /* Smooth shift when sidebar is toggled */
+    margin-left: 0; /* Default margin */
+}
+
+/* Adjust content margin when sidebar is shown */
+.content-container.sidebar-active {
+    margin-left: 250px; /* Adjust for sidebar width */
+}
+
+/* Burger Icon Styling */
+.burger-icon {
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    left: 30px; /* Move burger icon to the left */
+    z-index: 1000; /* Ensure it's always on top */
+}
+
+/* Home Icon Styling */
+.home-icon {
+    position: fixed;
+    bottom: 590px; /* Adjusts how low the icon is */
+    right: 30px;  /* Keeps the icon to the right */
+    color: rgba(83, 5, 28, 0.658); /* Sets the color to gray */
+    font-size: 1.3rem; /* Icon size */
+}
+
+.home-icon:hover {
+    color: rgba(221, 55, 105, 0.884); /* Change color on hover */
+    opacity: 0.8;
+}
+
+/* Responsive Design: Adjust sidebar for smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Slightly smaller sidebar on smaller screens */
+    }
+
+    .content-container {
+        margin-left: 0; /* Remove the left margin for small screens */
+    }
+}
