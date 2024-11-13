@@ -30,7 +30,7 @@ class RoleController extends Controller
         // Fixed Organizer password check
         if ($password === 'organizer123') {
             // This will store in session
-            $request->session()->('role', 'organizer');
+            $request->session()->put('role', 'organizer');
             return view('homepage', ['username' => $username]);  
         } else {
             return redirect()->back()->with('error_organizer', 'Invalid Organizer credentials');
