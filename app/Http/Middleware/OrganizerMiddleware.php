@@ -8,13 +8,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class OrganizerMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
+        if ($request->session()->get('role') !== 'organizer'){
+            return redirect()->route('role')->with('error','Access Denied');
+        }
         return $next($request);
     }
 }
