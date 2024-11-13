@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class Kernel extends HttpKernel
 {
+    protected $routeMiddleware = [
+        'auth.admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'auth.organizer' => \App\Http\Middleware\OrganizerMiddleware::class,
+    ];
     /**
      * The application's global HTTP middleware stack.
      *
@@ -58,9 +62,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
-    protected $routeMiddleware = [
-        'admin' => \App\Http\Middleware\AdminMiddleware::class,
-        'organizer' => \App\Http\Middleware\OrganizerMiddleware::class,
-    ];
+   
     
 }

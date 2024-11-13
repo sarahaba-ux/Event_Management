@@ -15,15 +15,17 @@ Route::get('/', function () {
 Route::post('/user/admin', [RoleController::class, 'adminLogin'])->name('login.admin');
 Route::post('/user/organizer', [RoleController::class, 'organizerLogin'])->name('login.organizer');
 
-// Protect routes with middleware
-Route::middleware(['admin'])->group(function () {
+
+// Protected routes for Admin (using 'auth.admin' middleware)
+Route::middleware(['auth.admin'])->group(function () {
     Route::get('/admin/dashboard', function () {
         return view('admindashboard');
-    })->name('admin.dashboard');
+    });
 });
 
-Route::middleware(['organizer'])->group(function () {
-    Route::get('/organizer/homepage', function () {
+// Protected routes for Organizer (using 'auth.organizer' middleware)
+Route::middleware(['auth.organizer'])->group(function () {
+    Route::get('/organizer/home', function () {
         return view('homepage');
-    })->name('organizer.homepage');
+    });
 });
