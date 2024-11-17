@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
@@ -29,3 +30,16 @@ Route::middleware(['auth.organizer'])->group(function () {
         return view('homepage');
     });
 });
+=======
+// routes/web.php
+Route::get('/', function () {
+    return view('homepage'); // This serves homepage.blade.php
+})->name('homepage');
+
+
+// Wedding route
+Route::get('/form', function () {
+    return view('form'); // This should point to wedding.blade.php
+})->name('form'); // Naming the route 'wedding'
+
+>>>>>>> c63adb82e0ab0ecb3d27747508dd28fdfdf81fd7
