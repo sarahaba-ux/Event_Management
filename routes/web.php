@@ -1,21 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RoleController;
-
-Route::get('/home', [HomeController::class, 'home'] )->name('homepage');
-//calling controller HomeController para ma view yung function na home na maga call sa view na homepage
-Route::get('/form', [HomeController::class, 'form'] )->name('form');
-
+// routes/web.php
 Route::get('/', function () {
-    return view('user_role');
-})->name('role');
+    return view('homepage'); // This serves homepage.blade.php
+})->name('homepage');
 
-Route::post('/user/admin', [RoleController::class, 'adminLogin'])->name('login.admin');
-Route::post('/user/organizer', [RoleController::class, 'organizerLogin'])->name('login.organizer');
 
-// Error page route
-Route::get('/error', function () {
-    return view('error'); // Error view
-})->name('error.page');
+// Wedding route
+Route::get('/form', function () {
+    return view('form'); // This should point to wedding.blade.php
+})->name('form'); // Naming the route 'wedding'
+

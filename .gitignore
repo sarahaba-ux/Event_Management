@@ -6,7 +6,11 @@
 /storage/*.key
 /storage/pail
 /vendor
+<<<<<<< HEAD
+.env
+=======
 /.env
+>>>>>>> c63adb82e0ab0ecb3d27747508dd28fdfdf81fd7
 .env.backup
 .env.production
 .phpactor.json
@@ -20,4 +24,7 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+<<<<<<< HEAD
+=======
 
+>>>>>>> c63adb82e0ab0ecb3d27747508dd28fdfdf81fd7
